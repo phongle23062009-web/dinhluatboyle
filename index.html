@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- THẺ META CHỐNG KẸT CACHE TRÌNH DUYỆT -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Định Luật Boyle - Trang Chủ</title>
+
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary-color: #0d9488;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --radius: 12px;
+        --shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-color);
+        background-color: #eff6ff;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        color: #ffffff;
+        padding: 3.5rem 1.5rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: #ffffff;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        flex: 1;
+        width: 100%;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .card h2 {
+        font-size: 1.25rem;
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      .formula {
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+        color: var(--primary-color);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+      }
+
+      .simulation-section {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        margin-bottom: 2.5rem;
+      }
+
+      .sim-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .sim-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .control-group label {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        height: 6px;
+        background: #cbd5e1;
+        border-radius: 3px;
+        outline: none;
+      }
+
+      .visualizer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f5f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+
+      .piston-outer {
+        width: 120px;
+        height: 200px;
+        border: 3px solid #334155;
+        border-top: none;
+        position: relative;
+        background-color: #ffffff;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .piston-inner {
+        width: 100%;
+        background-color: rgba(37, 99, 235, 0.2);
+        border-top: 8px solid #334155;
+        transition: height 0.1s ease;
+      }
+
+      .stat-badge {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+      }
+
+      footer {
+        background-color: var(--card-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="brand">Định Luật Boyle</div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Trang Chủ</a></li>
+          <li>
+            <a href="dinhluatboyle-lythuyet.html" class="nav-link">Lý Thuyết</a>
+          </li>
+          <li>
+            <a href="dinhluatboyle-thinghiem.html" class="nav-link"
+              >Thí Nghiệm</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Khám Phá Định Luật Boyle - Mariotte</h1>
+        <p>
+          Mối quan hệ tỉ lệ nghịch giữa áp suất (P) và thể tích (V) của một
+          lượng khí xác định khi nhiệt độ (T) giữ không đổi.
+        </p>
+        <div class="btn-group">
+          <a href="dinhluatboyle-lythuyet.html" class="btn btn-primary"
+            >Xem Lý Thuyết Chi Tiết</a
+          >
+          <a href="dinhluatboyle-thinghiem.html" class="btn btn-secondary"
+            >Xem Video Thí Nghiệm</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="grid-container">
+        <div class="card">
+          <h2>1. Quá Trình Đẳng Nhiệt</h2>
+          <p>
+            Quá trình biến đổi trạng thái của một lượng khí xác định, trong đó
+            <strong>nhiệt độ (T) được giữ không đổi</strong>, gọi là quá trình
+            đẳng nhiệt.
+          </p>
+        </div>
+        <div class="card">
+          <h2>2. Nội Dung Định Luật</h2>
+          <p>
+            Trong quá trình đẳng nhiệt, áp suất của một lượng khí xác định tỉ lệ
+            nghịch với thể tích của nó.
+          </p>
+          <div class="formula">P × V = const (Hằng số)</div>
+          <div class="formula">
+            P<sub>1</sub> × V<sub>1</sub> = P<sub>2</sub> × V<sub>2</sub>
+          </div>
+        </div>
+        <div class="card">
+          <h2>3. Ứng Dụng Thực Tế</h2>
+          <p>
+            Định luật giải thích các hiện tượng thực tế: hoạt động của bơm xe
+            đạp, xilanh động cơ, lặn biển và các thiết bị y tế.
+          </p>
+        </div>
+      </div>
+
+      <section class="simulation-section">
+        <h2 style="margin-bottom: 1.5rem; text-align: center">
+          Mô Phỏng Trực Quan Đẳng Nhiệt (P × V = k)
+        </h2>
+        <div class="sim-grid">
+          <div class="controls">
+            <div class="control-group">
+              <label for="volumeRange">
+                <span>Thể tích (V):</span>
+                <span id="volumeVal">100 mL</span>
+              </label>
+              <input
+                type="range"
+                id="volumeRange"
+                min="20"
+                max="100"
+                value="100"
+              />
+            </div>
+            <p style="font-size: 0.875rem; color: var(--text-muted)">
+              * Kéo thanh trượt điều chỉnh thể tích V để quan sát áp suất P tự
+              động thay đổi theo thời gian thực.
+            </p>
+          </div>
+
+          <div class="visualizer">
+            <div class="piston-outer">
+              <div class="piston-inner" id="piston"></div>
+            </div>
+            <div class="stat-badge" id="pressureVal">Áp suất (P): 1.00 atm</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 Dự án Học Tập Vật Lý 12 - THPT Tức Tranh. Phát triển bởi Phong đz
+        12A1.
+      </p>
+    </footer>
+
+    <script>
+      const volumeRange = document.getElementById("volumeRange");
+      const volumeVal = document.getElementById("volumeVal");
+      const pressureVal = document.getElementById("pressureVal");
+      const piston = document.getElementById("piston");
+
+      const K = 100;
+
+      function updateSimulation() {
+        const v = parseFloat(volumeRange.value);
+        const p = (K / v).toFixed(2);
+
+        volumeVal.textContent = `${v} mL`;
+        pressureVal.textContent = `Áp suất (P): ${p} atm`;
+        piston.style.height = `${v}%`;
+      }
+
+      volumeRange.addEventListener("input", updateSimulation);
+      updateSimulation();
+    </script>
+  </body>
+</html>

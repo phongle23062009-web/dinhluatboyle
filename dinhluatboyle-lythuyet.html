@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- THẺ META CHỐNG KẸT CACHE TRÌNH DUYỆT -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Lý Thuyết Chi Tiết - Định Luật Boyle</title>
+
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --radius: 12px;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+      }
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-color);
+        background-color: #eff6ff;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      .content-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+      h2 {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #1e293b;
+        border-bottom: 2px solid #eff6ff;
+        padding-bottom: 0.3rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: #334155;
+      }
+
+      .formula-box {
+        background-color: #eff6ff;
+        border-left: 4px solid var(--primary-color);
+        padding: 1.2rem;
+        font-weight: bold;
+        margin: 1.2rem 0;
+        font-size: 1.05rem;
+        border-radius: 0 8px 8px 0;
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        color: #334155;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      footer {
+        background-color: var(--card-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="brand">Định Luật Boyle</div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+          <li>
+            <a href="dinhluatboyle-lythuyet.html" class="nav-link active"
+              >Lý Thuyết</a
+            >
+          </li>
+          <li>
+            <a href="dinhluatboyle-thinghiem.html" class="nav-link"
+              >Thí Nghiệm</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="content-card">
+        <h1>Lý Thuyết Chi Tiết: Định Luật Boyle - Mariotte</h1>
+
+        <h2>1. Bối Cảnh Lịch Sử</h2>
+        <p>
+          Năm 1662, nhà vật lý người Anh Robert Boyle đã thực hiện nhiều thí
+          nghiệm về tính chất co giãn của chất khí. Đến năm 1676, nhà vật lý
+          người Pháp Edme Mariotte cũng độc lập nghiên cứu và đưa ra kết luận
+          tương tự. Do đó, định luật này mang tên cả hai ông:
+          <strong>Định luật Boyle - Mariotte</strong>.
+        </p>
+
+        <h2>2. Quá Trình Đẳng Nhiệt</h2>
+        <p>
+          Trong nhiệt động lực học, quá trình biến đổi trạng thái của một khối
+          lượng khí xác định khi
+          <strong>nhiệt độ (T) giữ không đổi</strong> được gọi là quá trình đẳng
+          nhiệt.
+        </p>
+
+        <h2>3. Phát Biểu Định Luật</h2>
+        <p>
+          Trong quá trình đẳng nhiệt của một lượng khí xác định, áp suất (P) tỉ
+          lệ nghịch với thể tích (V) của khí đó.
+        </p>
+
+        <div class="formula-box">
+          Biểu thức toán học:<br />
+          P ~ 1 / V =&gt; P × V = const (Hằng số)<br /><br />
+          Nếu gọi P<sub>1</sub>, V<sub>1</sub> là áp suất và thể tích ở trạng
+          thái 1;<br />
+          P<sub>2</sub>, V<sub>2</sub> là áp suất và thể tích ở trạng thái 2:<br />
+          <strong
+            >P<sub>1</sub> × V<sub>1</sub> = P<sub>2</sub> × V<sub
+              >2</sub
+            ></strong
+          >
+        </div>
+
+        <h2>4. Đường Đẳng Nhiệt</h2>
+        <p>
+          Trong hệ tọa độ vuông góc (P, V), đường biểu diễn sự phụ thuộc của áp
+          suất P vào thể tích V khi nhiệt độ T không đổi có dạng là một đường
+          <strong>Hyperbol</strong>, gọi là đường đẳng nhiệt.
+        </p>
+        <ul>
+          <li>Khi thể tích V giảm thì áp suất P tăng lên tương ứng.</li>
+          <li>
+            Ứng với các nhiệt độ khác nhau sẽ có các đường đẳng nhiệt khác nhau
+            (Đường ở trên ứng với nhiệt độ cao hơn).
+          </li>
+          <!-- KHUNG BẢNG VẼ ĐỒ THỊ HYPERBOL -->
+          <div
+            style="
+              margin-top: 2rem;
+              background: #ffffff;
+              border: 1px solid #e2e8f0;
+              border-radius: 12px;
+              padding: 1.5rem;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h2
+              style="color: #2563eb; margin-bottom: 0.5rem; text-align: center"
+            >
+              Đồ Thị Đường Đẳng Nhiệt (Hyperbol)
+            </h2>
+            <p
+              style="
+                text-align: center;
+                color: #475569;
+                font-size: 0.95rem;
+                margin-bottom: 1.2rem;
+              "
+            >
+              Sự phụ thuộc của áp suất (P) vào thể tích (V) khi nhiệt độ (T)
+              không đổi có dạng đường Hyperbol trong hệ tọa độ (P, V).
+            </p>
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <canvas
+                id="hyperbolaCanvas"
+                width="480"
+                height="320"
+                style="
+                  background-color: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  max-width: 100%;
+                  height: auto;
+                "
+              ></canvas>
+            </div>
+          </div>
+
+          <!-- JAVASCRIPT VẼ ĐỒ THỊ CHUẨN KÍCH THƯỚC & KHÔNG LỖI CHỮ -->
+          <script>
+            function renderBoyleChart() {
+              const canvas = document.getElementById("hyperbolaCanvas");
+              if (!canvas) return;
+              const ctx = canvas.getContext("2d");
+
+              const width = canvas.width;
+              const height = canvas.height;
+              const padding = 55;
+
+              // Xóa nền cũ
+              ctx.clearRect(0, 0, width, height);
+
+              // 1. Vẽ trục tọa độ P và V
+              ctx.beginPath();
+              ctx.strokeStyle = "#334155";
+              ctx.lineWidth = 2;
+
+              // Trục P (Tung) - Mũi tên kết thúc ở Y = 35px
+              ctx.moveTo(padding, height - padding);
+              ctx.lineTo(padding, 35);
+              ctx.lineTo(padding - 5, 43);
+              ctx.moveTo(padding, 35);
+              ctx.lineTo(padding + 5, 43);
+
+              // Trục V (Hoành)
+              ctx.moveTo(padding, height - padding);
+              ctx.lineTo(width - 25, height - padding);
+              ctx.lineTo(width - 33, height - padding - 5);
+              ctx.moveTo(width - 25, height - padding);
+              ctx.lineTo(width - 33, height - padding + 5);
+              ctx.stroke();
+
+              // 2. Điền nhãn tên trục P, V và gốc O (Đã kéo thoáng không bị đè)
+              ctx.fillStyle = "#0f172a";
+              ctx.font =
+                'bold 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+
+              ctx.fillText("P (atm)", padding - 22, 18); // Nhãn P đặt ở Y = 18px (Tránh mũi tên)
+              ctx.fillText("V (mL)", width - 50, height - padding + 35);
+              ctx.fillText("O", padding - 18, height - padding + 18);
+
+              // 3. Lưới tọa độ nhạt (Grid)
+              ctx.beginPath();
+              ctx.strokeStyle = "#f1f5f9";
+              ctx.lineWidth = 1;
+              for (let x = padding + 40; x < width - 30; x += 40) {
+                ctx.moveTo(x, 40);
+                ctx.lineTo(x, height - padding);
+              }
+              for (let y = height - padding - 40; y > 40; y -= 40) {
+                ctx.moveTo(padding, y);
+                ctx.lineTo(width - 30, y);
+              }
+              ctx.stroke();
+
+              // 4. Vẽ đường Hyperbol T2 (Nhiệt độ cao) - Nét xanh lam
+              ctx.beginPath();
+              ctx.strokeStyle = "#2563eb";
+              ctx.lineWidth = 3;
+              const k2 = 9000;
+              let isFirstPoint = true;
+
+              for (let v = 25; v <= 280; v += 2) {
+                let p = k2 / v;
+                let canvasX = padding + v;
+                let canvasY = height - padding - p;
+
+                if (canvasY >= 35 && canvasY <= height - padding) {
+                  if (isFirstPoint) {
+                    ctx.moveTo(canvasX, canvasY);
+                    isFirstPoint = false;
+                  } else {
+                    ctx.lineTo(canvasX, canvasY);
+                  }
+                }
+              }
+              ctx.stroke();
+
+              // 5. Vẽ đường Hyperbol T1 (Nhiệt độ thấp) - Nét đứt xanh ngọc
+              ctx.beginPath();
+              ctx.strokeStyle = "#0d9488";
+              ctx.lineWidth = 2.5;
+              ctx.setLineDash([5, 4]);
+              const k1 = 5000;
+              isFirstPoint = true;
+
+              for (let v = 15; v <= 280; v += 2) {
+                let p = k1 / v;
+                let canvasX = padding + v;
+                let canvasY = height - padding - p;
+
+                if (canvasY >= 35 && canvasY <= height - padding) {
+                  if (isFirstPoint) {
+                    ctx.moveTo(canvasX, canvasY);
+                    isFirstPoint = false;
+                  } else {
+                    ctx.lineTo(canvasX, canvasY);
+                  }
+                }
+              }
+              ctx.stroke();
+              ctx.setLineDash([]);
+
+              // Chú thích T1, T2
+              ctx.fillStyle = "#2563eb";
+              ctx.font = "bold 12px sans-serif";
+              ctx.fillText("T2 (Nhiệt độ cao)", width - 150, 70);
+
+              ctx.fillStyle = "#0d9488";
+              ctx.fillText("T1 (Nhiệt độ thấp)", width - 150, 125);
+            }
+
+            // Tự động gọi vẽ khi trang nạp xong
+            if (document.readyState === "loading") {
+              document.addEventListener("DOMContentLoaded", renderBoyleChart);
+            } else {
+              renderBoyleChart();
+            }
+          </script>
+        </ul>
+
+        <h2>5. Ý Nghĩa Thực Tế</h2>
+        <p>
+          Định luật giải thích vi mô rằng khi nén thể tích khí nhỏ lại, mật độ
+          các phân tử khí tăng lên khiến tần suất va chạm của chúng vào thành
+          bình tăng, làm áp suất khí tăng vọt.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Dự án Học Tập Vật Lý 12 - THPT Tức Tranh</p>
+    </footer>
+  </body>
+</html>

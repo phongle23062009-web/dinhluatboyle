@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- THẺ META CHỐNG KẸT CACHE TRÌNH DUYỆT -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Thí Nghiệm & Số Liệu - Định Luật Boyle</title>
+
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --border-color: #e2e8f0;
+        --radius: 12px;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+      }
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-color);
+        background-color: #eff6ff;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+      .content-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      h2 {
+        color: #1e293b;
+        margin-bottom: 1rem;
+      }
+
+      /* KHUNG CHỨA VIDEO AI MP4 */
+      .video-wrapper {
+        width: 100%;
+        max-width: 450px;
+        margin: 1.5rem auto;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+        background-color: #000;
+      }
+
+      video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.2rem;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--border-color);
+        padding: 0.8rem;
+        text-align: center;
+      }
+
+      th {
+        background-color: #eff6ff;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      footer {
+        background-color: var(--card-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="brand">Định Luật Boyle</div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+          <li>
+            <a href="dinhluatboyle-lythuyet.html" class="nav-link">Lý Thuyết</a>
+          </li>
+          <li>
+            <a href="dinhluatboyle-thinghiem.html" class="nav-link active"
+              >Thí Nghiệm</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- KHU VỰC VIDEO THÍ NGHIỆM AI -->
+      <div class="content-card">
+        <h1>Video Mô Phỏng Thí Nghiệm Đẳng Nhiệt</h1>
+        <p style="text-align: center; color: var(--text-muted)">
+          Minh họa chi tiết mối quan hệ giữa thể tích (V) và áp suất (P) khi
+          dịch chuyển Piston
+        </p>
+
+        <div class="video-wrapper">
+          <video controls autoplay muted loop playsinline>
+            <source src="boyle-experiment.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ phát trực tiếp video này.
+          </video>
+        </div>
+      </div>
+
+      <!-- BẢNG SỐ LIỆU THÍ NGHIỆM -->
+      <div class="content-card">
+        <h2>Bảng Số Liệu Kiểm Chứng Thực Nghiệm</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem">
+          Kết quả đo đạc từ hệ thống Xilanh kết hợp cảm biến áp suất ở nhiệt độ
+          phòng không đổi (T = 293K):
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Lần đo</th>
+              <th>Thể tích V (mL)</th>
+              <th>Áp suất P (kPa)</th>
+              <th>Tích P × V (Hằng số k)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>60.0</td>
+              <td>100.0</td>
+              <td>6000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>40.0</td>
+              <td>150.0</td>
+              <td>6000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>30.0</td>
+              <td>200.0</td>
+              <td>6000</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>20.0</td>
+              <td>300.0</td>
+              <td>6000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Dự án Học Tập Vật Lý 12 - THPT Tức Tranh</p>
+    </footer>
+  </body>
+</html>
